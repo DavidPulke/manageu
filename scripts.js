@@ -1,10 +1,11 @@
 import TaskManager from "./classes/TaskManager.js";
+import Task from "./classes/Task.js";
+
 
 let manager = new TaskManager();
 console.log(manager);
-manager.addTask("HW");
-manager.addTask("Clean the mmd");
-console.log(manager);
+
+
 
 
 
@@ -18,7 +19,6 @@ window.addNewTask = function addNewTask() {
   } else {
     alert('INVALID INPUT: please enter a new Task Description')
   }
-
 };
 
 function showTasks() {
@@ -34,11 +34,22 @@ function showTasks() {
     } else {
       document.getElementById(
         "activeTasks"
-      ).innerHTML += `<div><li class='list-group-item d-inline-block w-50'> ${task.description}</li> <button class='btn btn-success me-1' onclick='completeTask(${task.id})'> <i class="fa-solid fa-check"></i> </button><button class='btn btn-primary me-1' onclick='updateTaskDescription(${task.id})'> <i class="text-light fa-sharp fa-solid fa-pencil"></i> </button><button class='btn btn-danger me-1' onclick="deleteTask(${task.id})"> <i class="fa-solid fa-trash"></i> </button </div>
+      ).innerHTML += `<div><li class='list-group-item d-inline-block w-50'> ${task.description}</li> <button class='btn btn-success me-1' onclick='completeTask(${task.id})'> <i class="fa-solid fa-check"></i> </button><button class='btn btn-primary me-1' onclick='updateTaskDescription(${task.id}, "${task.description}")'> <i class="text-light fa-sharp fa-solid fa-pencil"></i> </button><button class='btn btn-danger me-1' onclick="deleteTask(${task.id})"> <i class="fa-solid fa-trash"></i> </button </div>
     `;
     }
   }
+  localStorage.setItem("Tasks", JSON.stringify(manager.tasks))
 }
+
+let storageData = JSON.parse(localStorage.getItem("Tasks"));
+for (let task of storageData) {
+  let { id, description, completed } = task;
+  let newTask = new Task(description);
+  newTask.id = id
+  newTask.completed = completed;
+  manager.tasks.push(newTask)
+}
+
 
 showTasks();
 
@@ -51,7 +62,9 @@ window.completeTask = function completeTask(id) {
 
 
 window.updateTaskDescription = function updateTaskDescription(id) {
+
   let newDesc = prompt("Edit Your Task Description");
+
   if (newDesc !== "" && newDesc != null && newDesc.length < 20) {
     manager.updateTaskDescription(id, newDesc);
     showTasks(); // כדי לעדכן את התצוגה לאחר עריכת המשימה

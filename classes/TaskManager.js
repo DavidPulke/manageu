@@ -23,10 +23,6 @@ class TaskManager {
         })
     }
 
-    storage() {
-        localStorage.setItem("Tasks", JSON.stringify(this.tasks))
-    }
-
     updateTaskDescription(id, newDesc) {
         let indexToUpdate = this.tasks.findIndex((task) => {
             return task.id == id
