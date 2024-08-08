@@ -29,12 +29,12 @@ function showTasks() {
     if (task.completed) {
       document.getElementById(
         "completedTasks"
-      ).innerHTML += `<div><li class='list-group-item d-inline-block w-50'> ${task.description}</li> <button class='btn btn-success me-1' disabled> <i class="fa-solid fa-check"></i> </button><button class='btn btn-primary me-1' disabled> <i class="text-light fa-sharp fa-solid fa-pencil"></i> </button><button class='btn btn-danger me-1' onclick="deleteTask(${task.id})"> <i class="fa-solid fa-trash"></i> </button </div>
+      ).innerHTML += `<div><li  class='text-bg-dark completed-li list-group-item d-inline-block w-50 font-monospace'> ${task.description}</li> <button class='btn btn-success me-1' disabled> <i class="fa-solid fa-check"></i> </button><button class='btn btn-primary me-1' disabled> <i class="text-light fa-sharp fa-solid fa-pencil"></i> </button><button class='btn btn-danger me-1' onclick="deleteTask(${task.id})"> <i class="fa-solid fa-trash"></i> </button </div>
     `;
     } else {
       document.getElementById(
         "activeTasks"
-      ).innerHTML += `<div><li class='list-group-item d-inline-block w-50'> ${task.description}</li> <button class='btn btn-success me-1' onclick='completeTask(${task.id})'> <i class="fa-solid fa-check"></i> </button><button class='btn btn-primary me-1' onclick='updateTaskDescription(${task.id}, "${task.description}")'> <i class="text-light fa-sharp fa-solid fa-pencil"></i> </button><button class='btn btn-danger me-1' onclick="deleteTask(${task.id})"> <i class="fa-solid fa-trash"></i> </button </div>
+      ).innerHTML += `<div><li class='list-group-item  d-inline-block w-50 font-monospace'> ${task.description}</li> <button class='btn btn-success me-1' onclick='completeTask(${task.id})'> <i class="fa-solid fa-check"></i> </button><button class='btn btn-primary me-1' onclick='updateTaskDescription(${task.id},"${task.description}")'> <i class="text-light fa-sharp fa-solid fa-pencil"></i> </button><button class='btn btn-danger me-1' onclick="deleteTask(${task.id})"> <i class="fa-solid fa-trash"></i> </button </div>
     `;
     }
   }
@@ -61,11 +61,11 @@ window.completeTask = function completeTask(id) {
 
 
 
-window.updateTaskDescription = function updateTaskDescription(id) {
+window.updateTaskDescription = function updateTaskDescription(id, oldDesc) {
 
-  let newDesc = prompt("Edit Your Task Description");
+  let newDesc = prompt("Edit Your Task Description", oldDesc);
 
-  if (newDesc !== "" && newDesc != null && newDesc.length < 20) {
+  if (newDesc && newDesc != null && newDesc.length < 20) {
     manager.updateTaskDescription(id, newDesc);
     showTasks(); // כדי לעדכן את התצוגה לאחר עריכת המשימה
   } else if (newDesc.length > 20) {
@@ -77,6 +77,8 @@ window.updateTaskDescription = function updateTaskDescription(id) {
 }
 
 window.deleteTask = function deleteTask(id) {
-  manager.deleteTask(id)
-  showTasks()
+  if (confirm("Are You Sure")) {
+    manager.deleteTask(id)
+    showTasks()
+  }
 }
