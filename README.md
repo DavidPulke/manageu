@@ -3,7 +3,7 @@ ManageU
 ManageU הוא יישום לניהול משימות (ToDo List) שנבנה באמצעות מחלקות ב-JavaScript. ביישום ניתן להוסיף, לערוך, למחוק ולסמן משימות כהושלמו. כל המידע נשמר ב-LocalStorage של הדפדפן.
 
 קישור לפרויקט החי:
-ManageU
+https://davidpulke.github.io/manageu/
 
 תכונות עיקריות:
 
