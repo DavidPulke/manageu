@@ -1,26 +1,37 @@
-ManageU
-תיאור:
-ManageU הוא יישום לניהול משימות (ToDo List) שנבנה באמצעות מחלקות ב-JavaScript. ביישום ניתן להוסיף, לערוך, למחוק ולסמן משימות כהושלמו. כל המידע נשמר ב-LocalStorage של הדפדפן.
+ManageU Description:
+ManageU is a task management (ToDo List) application built using JavaScript classes. In the app, you can add, edit, delete, and mark tasks as completed. All information is saved in the browser's LocalStorage.
 
-קישור לפרויקט החי:
-https://davidpulke.github.io/manageu/
+Live Project Link: https://davidpulke.github.io/manageu/
 
-תכונות עיקריות:
+Main Features:
 
-ניהול משימות: אפשרות להוסיף, לערוך, למחוק ולאשר משימות.
-שימוש ב-LocalStorage: שמירת המשימות במערכת האחסון המקומית של הדפדפן.
-ממשק משתמש ידידותי: ממשק פשוט ונוח לשימוש לניהול המשימות היומיומיות.
-התקנה והרצה מקומית:
+Task Management: Add, edit, delete, and mark tasks as completed.
 
-שיבוט המאגר:
+LocalStorage Integration: Tasks are stored in the browser's LocalStorage for persistent storage.
+
+User-Friendly Interface: A simple and intuitive interface for managing daily tasks.
+
+Installation and Local Run:
+
+Clone the repository:
+
 bash
+
 Copy code
+
 git clone https://github.com/username/ManageU.git
-כניסה לתיקייה:
+
+Navigate to the folder:
+
 bash
+
 Copy code
+
 cd ManageU
-פתיחת הקובץ: פתח את index.html בדפדפן המועדף עליך.
+
+Open the file:
+
+Open index.html in your preferred browser.
 
 
 
