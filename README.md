@@ -1,35 +1,35 @@
-ManageU Description:
+## ManageU Description:
 ManageU is a task management (ToDo List) application built using JavaScript classes. In the app, you can add, edit, delete, and mark tasks as completed. All information is saved in the browser's LocalStorage.
 
-Live Project Link: https://davidpulke.github.io/manageu/
+## Live Project Link: https://davidpulke.github.io/manageu/
 
-Main Features:
+## Main Features:
 
-Task Management: Add, edit, delete, and mark tasks as completed.
+- Task Management: Add, edit, delete, and mark tasks as completed.
 
-LocalStorage Integration: Tasks are stored in the browser's LocalStorage for persistent storage.
+- LocalStorage Integration: Tasks are stored in the browser's LocalStorage for persistent storage.
 
-User-Friendly Interface: A simple and intuitive interface for managing daily tasks.
+- User-Friendly Interface: A simple and intuitive interface for managing daily tasks.
 
-Installation and Local Run:
+## Installation and Local Run:
 
-Clone the repository:
+- Clone the repository:
 
-bash
+- bash
 
-Copy code
+- Copy code
 
-git clone https://github.com/username/ManageU.git
+- git clone https://github.com/username/ManageU.git
 
-Navigate to the folder:
+## Navigate to the folder:
 
-bash
+- bash
 
-Copy code
+- Copy code
 
-cd ManageU
+- cd ManageU
 
-Open the file:
+## Open the file:
 
 Open index.html in your preferred browser.
 
