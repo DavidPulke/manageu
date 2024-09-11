@@ -3,7 +3,7 @@ import Task from "./classes/Task.js";
 
 
 let manager = new TaskManager();
-console.log(manager);
+
 
 
 
